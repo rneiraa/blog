@@ -1,0 +1,1 @@
+Sitemap: https://github.com/rneiraa/blog/sitemap.xml
