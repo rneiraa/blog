@@ -1,0 +1,192 @@
+/*-- scss:defaults --*/
+
+// =====================================================================
+// Shades of Purple  ·  adaptación del tema de VS Code (Ahmad Awais)
+// =====================================================================
+// Este bloque define VARIABLES de Sass. Quarto las inyecta ANTES de
+// compilar Bootstrap, así que cambiar una aquí reconfigura el sitio
+// entero de forma coherente (botones, tablas, formularios, todo).
+
+// --- Paleta original ---------------------------------------------------
+$sop-bg-deep:   #1e1e3f;   // barra lateral / navbar / bloques de código
+$sop-bg:        #2d2b55;   // fondo del editor -> fondo del sitio
+$sop-bg-soft:   #34317c;   // hover, filas alternas
+$sop-border:    #4d4a8f;   // bordes
+$sop-fg:        #e3dfff;   // texto
+$sop-muted:     #a599e9;   // texto secundario, números de línea
+$sop-yellow:    #fad000;   // acento principal (cursor, funciones)
+$sop-yellow-lt: #ffee80;
+$sop-pink:      #ff628c;   // constantes
+$sop-green:     #a5ff90;   // strings
+$sop-cyan:      #9effff;   // variables
+$sop-orange:    #ff9d00;   // keywords
+$sop-purple:    #b362ff;   // comentarios
+
+// --- Tipografía --------------------------------------------------------
+// $web-font-path lo importa Bootswatch: al redefinirlo reemplazamos
+// la fuente que traía darkly (Lato) por estas dos.
+$web-font-path: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap";
+
+$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+$font-family-monospace:  "Fira Code", "JetBrains Mono", ui-monospace, monospace;
+
+// --- Colores base de Bootstrap ----------------------------------------
+$body-bg:    $sop-bg;
+$body-color: $sop-fg;
+
+$primary:   $sop-yellow;
+$secondary: $sop-purple;
+$success:   $sop-green;
+$info:      $sop-cyan;
+$warning:   $sop-orange;
+$danger:    $sop-pink;
+$light:     $sop-bg-soft;
+$dark:      $sop-bg-deep;
+
+$link-color:       $sop-cyan;
+$link-hover-color: $sop-yellow;
+$link-decoration:  none;
+$link-hover-decoration: underline;
+
+$border-color: $sop-border;
+
+// --- Variables propias de Quarto --------------------------------------
+// (no son de Bootstrap: las define Quarto para sus componentes)
+$navbar-bg: $sop-bg-deep;
+$navbar-fg: $sop-fg;
+$navbar-hl: $sop-yellow;
+
+$sidebar-bg: $sop-bg-deep;
+$sidebar-fg: $sop-fg;
+$sidebar-hl: $sop-yellow;
+
+$footer-bg: $sop-bg-deep;
+$footer-fg: $sop-muted;
+
+$code-color:     $sop-pink;          // código en línea
+$code-bg:        rgba(0, 0, 0, 0.25);
+$code-block-bg:  $sop-bg-deep;       // bloques de código
+$code-block-border-left: $sop-purple;
+
+$table-border-color: $sop-border;
+$table-hover-bg:     $sop-bg-soft;
+
+$input-bg:     $sop-bg-deep;
+$input-color:  $sop-fg;
+$input-border-color: $sop-border;
+
+$card-bg:     $sop-bg-deep;
+$popover-bg:  $sop-bg-deep;
+$dropdown-bg: $sop-bg-deep;
+$dropdown-link-color: $sop-fg;
+$dropdown-link-hover-bg: $sop-bg-soft;
+
+$toc-color:        $sop-muted;
+$toc-active-border: $sop-yellow;
+
+
+/*-- scss:rules --*/
+
+// Este bloque son REGLAS CSS normales, para lo que las variables
+// no alcanzan a cubrir.
+
+// --- Encabezados -------------------------------------------------------
+h1, .h1, h2, .h2 { color: $sop-yellow-lt; }
+h3, .h3, h4, .h4, h5, h6 { color: $sop-fg; }
+
+// La numeración de secciones (number-sections) en el acento
+.header-section-number { color: $sop-purple; }
+
+// --- Banner de título --------------------------------------------------
+.quarto-title-banner {
+  background: linear-gradient(135deg, $sop-bg-deep 0%, $sop-bg-soft 100%);
+  border-bottom: 2px solid $sop-yellow;
+  color: $sop-fg;
+  .quarto-title .title { color: $sop-yellow-lt; }
+  .subtitle, .quarto-title-meta-contents, .quarto-title-meta-heading { color: $sop-muted; }
+}
+
+// --- Navbar ------------------------------------------------------------
+.navbar {
+  border-bottom: 1px solid $sop-border;
+  .navbar-brand { color: $sop-yellow; font-weight: 600; }
+  .nav-link:hover, .nav-link.active { color: $sop-yellow !important; }
+}
+
+// --- Tablas de los listados -------------------------------------------
+.quarto-listing-table {
+  color: $sop-fg;
+  thead th {
+    border-bottom: 2px solid $sop-purple;
+    color: $sop-muted;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    a.sort { color: $sop-muted; &:hover { color: $sop-yellow; } }
+  }
+  tbody tr:hover { background-color: $sop-bg-soft; }
+  td { border-color: rgba(255, 255, 255, 0.07); }
+  .listing-date, .listing-reading-time { color: $sop-muted; }
+  .listing-categories { color: $sop-cyan; }
+}
+
+// --- Fichas de los listados (portada) ---------------------------------
+.quarto-post {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  .listing-title a { color: $sop-fg; &:hover { color: $sop-yellow; } }
+  .listing-description { color: $sop-muted; }
+  .metadata { color: $sop-muted; }
+}
+
+// --- Píldoras de categoría --------------------------------------------
+.listing-category, .quarto-category {
+  border: 1px solid $sop-border !important;
+  color: $sop-muted !important;
+  border-radius: 999px;
+  &:hover { border-color: $sop-yellow !important; color: $sop-yellow !important; }
+}
+
+// --- Tarjetas de la portada (.border de Bootstrap) --------------------
+.grid > [class*="g-col"].border {
+  background-color: $sop-bg-deep;
+  border-color: $sop-border !important;
+  transition: border-color 0.15s ease;
+  &:hover { border-color: $sop-yellow !important; }
+}
+
+// --- Citas y separadores ----------------------------------------------
+blockquote {
+  border-left: 3px solid $sop-purple;
+  color: $sop-muted;
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 0.6rem 1rem;
+}
+hr { border-color: $sop-border; opacity: 1; }
+
+// --- Índice lateral (toc) ---------------------------------------------
+#TOC, .sidebar {
+  a { color: $sop-muted; &:hover { color: $sop-yellow; } }
+  .active { color: $sop-yellow !important; border-left-color: $sop-yellow !important; }
+}
+
+// --- Buscador ----------------------------------------------------------
+// El autocompletado de Quarto trae fondo claro por defecto.
+.aa-Panel, .aa-Autocomplete, .aa-DetachedContainer {
+  background-color: $sop-bg-deep;
+  color: $sop-fg;
+  .aa-Item { color: $sop-fg; &[aria-selected="true"] { background-color: $sop-bg-soft; } }
+  .aa-ItemContentTitle mark, mark { background: transparent; color: $sop-yellow; }
+}
+.aa-Form, .aa-InputWrapper input { background-color: $sop-bg-deep; color: $sop-fg; }
+
+// --- Matemáticas -------------------------------------------------------
+// MathJax hereda el color del texto, pero las ecuaciones numeradas no.
+mjx-container { color: $sop-fg; }
+.math.display { overflow-x: auto; overflow-y: hidden; }
+
+// --- Bloques de código -------------------------------------------------
+div.sourceCode {
+  border: 1px solid $sop-border;
+  border-radius: 4px;
+}
+.code-copy-button { color: $sop-muted; &:hover { color: $sop-yellow; } }

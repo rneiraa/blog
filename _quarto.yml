@@ -30,7 +30,11 @@ lang: es
 
 format:
   html:
+    # darkly = base oscura de Bootstrap; el .scss encima la repinta
     theme:
-      - cosmo
-      - brand
+      - darkly
+      - shades-of-purple.scss
     css: styles.css
+    highlight-style: shades-of-purple.theme
+    code-overflow: wrap
+    code-copy: true
