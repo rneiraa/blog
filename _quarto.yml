@@ -16,6 +16,10 @@ website:
         text: Inicio
       - href: econometria.qmd
         text: Econometría
+      - href: microeconomia.qmd
+        text: Microeconomía
+      - href: blog.qmd
+        text: Blog
     right:
       - about.qmd
       - icon: github

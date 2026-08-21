@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://rneiraa.github.io/blog/blog.html</loc>
+    <lastmod>2026-08-21T23:33:55.583Z</lastmod>
+  </url>
+  <url>
     <loc>https://rneiraa.github.io/blog/econometria.html</loc>
     <lastmod>2026-08-21T23:28:58.336Z</lastmod>
   </url>
   <url>
-    <loc>https://rneiraa.github.io/blog/posts/welcome/index.html</loc>
-    <lastmod>2026-08-21T21:48:34.191Z</lastmod>
-  </url>
-  <url>
-    <loc>https://rneiraa.github.io/blog/about.html</loc>
-    <lastmod>2026-08-21T23:03:16.216Z</lastmod>
-  </url>
-  <url>
-    <loc>https://rneiraa.github.io/blog/index.html</loc>
-    <lastmod>2026-08-21T23:29:15.877Z</lastmod>
+    <loc>https://rneiraa.github.io/blog/posts/post-with-code/index.html</loc>
+    <lastmod>2026-08-21T23:25:56.643Z</lastmod>
   </url>
   <url>
     <loc>https://rneiraa.github.io/blog/econometria/01-mco/index.html</loc>
     <lastmod>2026-08-21T23:30:33.158Z</lastmod>
   </url>
   <url>
-    <loc>https://rneiraa.github.io/blog/posts/post-with-code/index.html</loc>
-    <lastmod>2026-08-21T23:25:56.643Z</lastmod>
+    <loc>https://rneiraa.github.io/blog/index.html</loc>
+    <lastmod>2026-08-21T23:33:47.903Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rneiraa.github.io/blog/about.html</loc>
+    <lastmod>2026-08-21T23:03:16.216Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rneiraa.github.io/blog/posts/welcome/index.html</loc>
+    <lastmod>2026-08-21T21:48:34.191Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rneiraa.github.io/blog/microeconomia.html</loc>
+    <lastmod>2026-08-21T23:33:16.892Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rneiraa.github.io/blog/microeconomia/01-preferencias/index.html</loc>
+    <lastmod>2026-08-21T23:33:25.757Z</lastmod>
   </url>
 </urlset>

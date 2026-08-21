@@ -1,0 +1,14 @@
+# Opciones que aplican a TODAS las notas de esta carpeta
+
+# No re-ejecuta el código si el .qmd no cambió
+freeze: auto
+
+title-block-banner: true
+
+# Tabla de contenidos lateral: clave en apuntes largos
+toc: true
+toc-title: "Contenido"
+toc-depth: 3
+
+number-sections: true
+code-fold: false

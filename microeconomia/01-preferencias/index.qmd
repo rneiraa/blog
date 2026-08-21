@@ -1,0 +1,33 @@
+---
+title: "Preferencias y función de utilidad"
+description: "De la relación de preferencia a la representación numérica"
+author: "Rafael Neira"
+date: "2026-08-21"
+categories: [Consumidor, Preferencias]
+---
+
+## La relación de preferencia
+
+El consumidor ordena canastas del conjunto de consumo $X \subseteq \mathbb{R}^n_+$
+mediante una relación $\succsim$, donde $x \succsim y$ se lee "$x$ es al menos tan
+preferida como $y$".
+
+## Axiomas
+
+1. **Completitud**: para todo par $x, y \in X$, o bien $x \succsim y$, o bien $y \succsim x$.
+2. **Transitividad**: si $x \succsim y$ e $y \succsim z$, entonces $x \succsim z$.
+3. **Continuidad**: los conjuntos $\{y : y \succsim x\}$ y $\{y : x \succsim y\}$ son cerrados.
+
+Los dos primeros definen una preferencia *racional*. El tercero es el que evita
+saltos y permite el resultado siguiente.
+
+## Representación por utilidad
+
+Si $\succsim$ es racional y continua, existe una función continua
+$u : X \to \mathbb{R}$ tal que
+
+$$x \succsim y \iff u(x) \geq u(y)$$ {#eq-utilidad}
+
+La @eq-utilidad es **ordinal**: cualquier transformación monótona creciente de $u$
+representa las mismas preferencias, así que los niveles de utilidad no tienen
+significado por sí solos, solo el orden que inducen.

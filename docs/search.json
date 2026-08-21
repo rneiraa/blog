@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Econometría II\n\n\n\nEconometría\n\nSeries de timpo\n\n\n\n\n\n\n\n\n\n21 ago 2026\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n18 ago 2026\n\n\n\n\n\nNo hay resultados"
+  },
+  {
     "objectID": "econometria.html",
     "href": "econometria.html",
     "title": "Econometría",
@@ -7,25 +14,11 @@
     "text": "Apuntes del curso. Usa el buscador o filtra por tema.\n\n\n\n\n\n\n   \n    \n    \n      Ordenar por\n      Por defecto\n      \n        Fecha - Más antiguo\n      \n      \n        Fecha - Más reciente\n      \n      \n        Nota\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nFecha\n\n\n\nNota\n\n\n\nTemas\n\n\n\nLectura\n\n\n\n\n\n\n\n\n21 ago 2026\n\n\nMínimos cuadrados ordinarios\n\n\nMCO, Inferencia\n\n\n1 minutos\n\n\n\n\n\n\nNo hay resultados"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Econometría II",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Sobre",
-    "section": "",
-    "text": "Hola :3"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Econometría II\n\n\n\nEconometría\n\nSeries de timpo\n\n\n\n\n\n\n\n\n\n21 ago 2026\n\n\nRafael Neira\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n18 ago 2026\n\n\nTristan O’Malley\n\n\n\n\n\nNo hay resultados"
+    "text": "Aquí alojaré algunos apuntes de econometría"
   },
   {
     "objectID": "econometria/01-mco/index.html",
@@ -56,10 +49,73 @@
     "text": "3 Varianza\n\\[\\text{Var}(\\hat\\beta \\mid X) = \\sigma^2 (X'X)^{-1}\\]\nCuando cae el supuesto de homocedasticidad hay que usar errores robustos, que es el tema de la nota siguiente."
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Econometría II",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Apuntes de clase",
     "section": "",
-    "text": "Aquí alojaré algunos apuntes de econometría"
+    "text": "Aquí publico las notas que tomo en clase, ordenadas por ramo. Cada sección tiene su propio índice con buscador y filtro por tema."
+  },
+  {
+    "objectID": "index.html#secciones",
+    "href": "index.html#secciones",
+    "title": "Apuntes de clase",
+    "section": "Secciones",
+    "text": "Secciones\n\n\nEconometría\nModelo lineal, supuestos e inferencia. Series de tiempo.\nVer el índice →\n\n\nMicroeconomía\nTeoría del consumidor y del productor. Equilibrio.\nVer el índice →"
+  },
+  {
+    "objectID": "index.html#últimas-notas",
+    "href": "index.html#últimas-notas",
+    "title": "Apuntes de clase",
+    "section": "Últimas notas",
+    "text": "Últimas notas\n\n\n\n\n\nMínimos cuadrados ordinarios\n\n\n\nMCO\n\nInferencia\n\n\n\nSupuestos de Gauss-Markov y propiedades del estimador\n\n\n\n\n\n21 ago 2026\n\n\n\n\n\n\n\nPreferencias y función de utilidad\n\n\n\nConsumidor\n\nPreferencias\n\n\n\nDe la relación de preferencia a la representación numérica\n\n\n\n\n\n21 ago 2026\n\n\n\n\n\nNo hay resultados\n\n¿Buscas algo puntual? Usa el buscador de la barra superior: indexa el texto completo de todas las notas."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Sobre",
+    "section": "",
+    "text": "Hola :3"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "microeconomia.html",
+    "href": "microeconomia.html",
+    "title": "Microeconomía",
+    "section": "",
+    "text": "Apuntes del curso. Usa el buscador o filtra por tema.\n\n\n\n\n\n\n   \n    \n    \n      Ordenar por\n      Por defecto\n      \n        Fecha - Más antiguo\n      \n      \n        Fecha - Más reciente\n      \n      \n        Nota\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nFecha\n\n\n\nNota\n\n\n\nTemas\n\n\n\nLectura\n\n\n\n\n\n\n\n\n21 ago 2026\n\n\nPreferencias y función de utilidad\n\n\nConsumidor, Preferencias\n\n\n1 minutos\n\n\n\n\n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "microeconomia/01-preferencias/index.html",
+    "href": "microeconomia/01-preferencias/index.html",
+    "title": "Preferencias y función de utilidad",
+    "section": "",
+    "text": "El consumidor ordena canastas del conjunto de consumo \\(X \\subseteq \\mathbb{R}^n_+\\) mediante una relación \\(\\succsim\\), donde \\(x \\succsim y\\) se lee “\\(x\\) es al menos tan preferida como \\(y\\)”."
+  },
+  {
+    "objectID": "microeconomia/01-preferencias/index.html#la-relación-de-preferencia",
+    "href": "microeconomia/01-preferencias/index.html#la-relación-de-preferencia",
+    "title": "Preferencias y función de utilidad",
+    "section": "",
+    "text": "El consumidor ordena canastas del conjunto de consumo \\(X \\subseteq \\mathbb{R}^n_+\\) mediante una relación \\(\\succsim\\), donde \\(x \\succsim y\\) se lee “\\(x\\) es al menos tan preferida como \\(y\\)”."
+  },
+  {
+    "objectID": "microeconomia/01-preferencias/index.html#axiomas",
+    "href": "microeconomia/01-preferencias/index.html#axiomas",
+    "title": "Preferencias y función de utilidad",
+    "section": "2 Axiomas",
+    "text": "2 Axiomas\n\nCompletitud: para todo par \\(x, y \\in X\\), o bien \\(x \\succsim y\\), o bien \\(y \\succsim x\\).\nTransitividad: si \\(x \\succsim y\\) e \\(y \\succsim z\\), entonces \\(x \\succsim z\\).\nContinuidad: los conjuntos \\(\\{y : y \\succsim x\\}\\) y \\(\\{y : x \\succsim y\\}\\) son cerrados.\n\nLos dos primeros definen una preferencia racional. El tercero es el que evita saltos y permite el resultado siguiente."
+  },
+  {
+    "objectID": "microeconomia/01-preferencias/index.html#representación-por-utilidad",
+    "href": "microeconomia/01-preferencias/index.html#representación-por-utilidad",
+    "title": "Preferencias y función de utilidad",
+    "section": "3 Representación por utilidad",
+    "text": "3 Representación por utilidad\nSi \\(\\succsim\\) es racional y continua, existe una función continua \\(u : X \\to \\mathbb{R}\\) tal que\n\\[x \\succsim y \\iff u(x) \\geq u(y) \\tag{1}\\]\nLa Ecuación 1 es ordinal: cualquier transformación monótona creciente de \\(u\\) representa las mismas preferencias, así que los niveles de utilidad no tienen significado por sí solos, solo el orden que inducen."
   }
 ]

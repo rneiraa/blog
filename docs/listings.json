@@ -1,5 +1,12 @@
 [
   {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/post-with-code/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
     "listing": "/econometria.html",
     "items": [
       "/econometria/01-mco/index.html"
@@ -8,8 +15,14 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/post-with-code/index.html",
-      "/posts/welcome/index.html"
+      "/econometria/01-mco/index.html",
+      "/microeconomia/01-preferencias/index.html"
+    ]
+  },
+  {
+    "listing": "/microeconomia.html",
+    "items": [
+      "/microeconomia/01-preferencias/index.html"
     ]
   }
 ]

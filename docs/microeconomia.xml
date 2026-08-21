@@ -6,52 +6,11 @@
       version="2.0">
 <channel>
 <title>Rafael Neira</title>
-<link>https://rneiraa.github.io/blog/</link>
-<atom:link href="https://rneiraa.github.io/blog/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://rneiraa.github.io/blog/microeconomia.html</link>
+<atom:link href="https://rneiraa.github.io/blog/microeconomia.xml" rel="self" type="application/rss+xml"/>
 <description>Apuntes de clase</description>
 <generator>quarto-1.10.18</generator>
 <lastBuildDate>Fri, 21 Aug 2026 04:00:00 GMT</lastBuildDate>
-<item>
-  <title>Mínimos cuadrados ordinarios</title>
-  <dc:creator>Rafael Neira</dc:creator>
-  <link>https://rneiraa.github.io/blog/econometria/01-mco/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<section id="el-estimador" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="el-estimador"><span class="header-section-number">1</span> El estimador</h2>
-<p>Partimos del modelo lineal <img src="https://latex.codecogs.com/png.latex?y%20=%20X%5Cbeta%20+%20u">, con <img src="https://latex.codecogs.com/png.latex?X"> de dimensión <img src="https://latex.codecogs.com/png.latex?n%20%5Ctimes%20k">. Minimizando la suma de residuos al cuadrado se llega a</p>
-<p><span id="eq-mco"><img src="https://latex.codecogs.com/png.latex?%5Chat%7B%5Cbeta%7D%20=%20(X'X)%5E%7B-1%7DX'y%20%5Ctag%7B1%7D"></span></p>
-<p>La Ecuación&nbsp;1 existe siempre que <img src="https://latex.codecogs.com/png.latex?X'X"> sea invertible, es decir, mientras no haya colinealidad perfecta entre regresores.</p>
-</section>
-<section id="supuestos-de-gauss-markov" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="supuestos-de-gauss-markov"><span class="header-section-number">2</span> Supuestos de Gauss-Markov</h2>
-<ol type="1">
-<li>Linealidad en los parámetros.</li>
-<li>Muestreo aleatorio.</li>
-<li>No colinealidad perfecta: <img src="https://latex.codecogs.com/png.latex?%5Ctext%7Brank%7D(X)%20=%20k">.</li>
-<li>Exogeneidad estricta: <img src="https://latex.codecogs.com/png.latex?E%5Bu%20%5Cmid%20X%5D%20=%200">.</li>
-<li>Homocedasticidad: <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BVar%7D(u%20%5Cmid%20X)%20=%20%5Csigma%5E2%20I_n">.</li>
-</ol>
-<p>Bajo (1)–(4) el estimador es insesgado, <img src="https://latex.codecogs.com/png.latex?E%5B%5Chat%5Cbeta%20%5Cmid%20X%5D%20=%20%5Cbeta">. Agregando (5) es además el de mínima varianza dentro de los lineales insesgados.</p>
-</section>
-<section id="varianza" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="varianza"><span class="header-section-number">3</span> Varianza</h2>
-<p><img src="https://latex.codecogs.com/png.latex?%5Ctext%7BVar%7D(%5Chat%5Cbeta%20%5Cmid%20X)%20=%20%5Csigma%5E2%20(X'X)%5E%7B-1%7D"></p>
-<p>Cuando cae el supuesto de homocedasticidad hay que usar errores robustos, que es el tema de la nota siguiente.</p>
-
-
-</section>
-
- ]]></description>
-  <category>MCO</category>
-  <category>Inferencia</category>
-  <guid>https://rneiraa.github.io/blog/econometria/01-mco/</guid>
-  <pubDate>Fri, 21 Aug 2026 04:00:00 GMT</pubDate>
-</item>
 <item>
   <title>Preferencias y función de utilidad</title>
   <dc:creator>Rafael Neira</dc:creator>

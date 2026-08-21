@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Rafael Neira">
+<meta name="description" content="De la relación de preferencia a la representación numérica">
 
-<title>Sobre – Rafael Neira</title>
+<title>Preferencias y función de utilidad – Rafael Neira</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,22 +31,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-45ddf7b0cf4b2676025ccfabb06ea0b5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-45ddf7b0cf4b2676025ccfabb06ea0b5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,18 +76,47 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Rafael Neira</span>
     </a>
   </div>
@@ -95,25 +127,25 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Inicio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./econometria.html"> 
+    <a class="nav-link" href="../../econometria.html"> 
 <span class="menu-text">Econometría</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./microeconomia.html"> 
+    <a class="nav-link" href="../../microeconomia.html"> 
 <span class="menu-text">Microeconomía</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">Sobre</span></a>
   </li>  
   <li class="nav-item compact">
@@ -134,46 +166,96 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Preferencias y función de utilidad</h1>
+                  <div>
+        <div class="description">
+          De la relación de preferencia a la representación numérica
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Consumidor</div>
+                <div class="quarto-category">Preferencias</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Autor/a</div>
+      <div class="quarto-title-meta-contents">
+               <p>Rafael Neira </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Fecha de publicación</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">21 de agosto de 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contenido</h2>
+   
+  <ul>
+  <li><a href="#la-relación-de-preferencia" id="toc-la-relación-de-preferencia" class="nav-link active" data-scroll-target="#la-relación-de-preferencia"><span class="header-section-number">1</span> La relación de preferencia</a></li>
+  <li><a href="#axiomas" id="toc-axiomas" class="nav-link" data-scroll-target="#axiomas"><span class="header-section-number">2</span> Axiomas</a></li>
+  <li><a href="#representación-por-utilidad" id="toc-representación-por-utilidad" class="nav-link" data-scroll-target="#representación-por-utilidad"><span class="header-section-number">3</span> Representación por utilidad</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="profile.jpg" class="about-image
-  rounded " style="width: 20em;">
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Sobre</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header>
-    <div class="about-links">
-  <a href="https://bsky.app/" class="about-link" rel="" target="">
-    <i class="bi bi-bluesky"></i>
-     <span class="about-link-text">Bluesky</span>
-  </a>
-  <a href="https://linkedin.com" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-<p>Hola :3</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-</main></div>
-</div>
- <!-- /main -->
+
+
+
+<section id="la-relación-de-preferencia" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="la-relación-de-preferencia"><span class="header-section-number">1</span> La relación de preferencia</h2>
+<p>El consumidor ordena canastas del conjunto de consumo <span class="math inline">\(X \subseteq \mathbb{R}^n_+\)</span> mediante una relación <span class="math inline">\(\succsim\)</span>, donde <span class="math inline">\(x \succsim y\)</span> se lee “<span class="math inline">\(x\)</span> es al menos tan preferida como <span class="math inline">\(y\)</span>”.</p>
+</section>
+<section id="axiomas" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="axiomas"><span class="header-section-number">2</span> Axiomas</h2>
+<ol type="1">
+<li><strong>Completitud</strong>: para todo par <span class="math inline">\(x, y \in X\)</span>, o bien <span class="math inline">\(x \succsim y\)</span>, o bien <span class="math inline">\(y \succsim x\)</span>.</li>
+<li><strong>Transitividad</strong>: si <span class="math inline">\(x \succsim y\)</span> e <span class="math inline">\(y \succsim z\)</span>, entonces <span class="math inline">\(x \succsim z\)</span>.</li>
+<li><strong>Continuidad</strong>: los conjuntos <span class="math inline">\(\{y : y \succsim x\}\)</span> y <span class="math inline">\(\{y : x \succsim y\}\)</span> son cerrados.</li>
+</ol>
+<p>Los dos primeros definen una preferencia <em>racional</em>. El tercero es el que evita saltos y permite el resultado siguiente.</p>
+</section>
+<section id="representación-por-utilidad" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="representación-por-utilidad"><span class="header-section-number">3</span> Representación por utilidad</h2>
+<p>Si <span class="math inline">\(\succsim\)</span> es racional y continua, existe una función continua <span class="math inline">\(u : X \to \mathbb{R}\)</span> tal que</p>
+<p><span id="eq-utilidad"><span class="math display">\[x \succsim y \iff u(x) \geq u(y) \tag{1}\]</span></span></p>
+<p>La <a href="#eq-utilidad" class="quarto-xref">Ecuación&nbsp;1</a> es <strong>ordinal</strong>: cualquier transformación monótona creciente de <span class="math inline">\(u\)</span> representa las mismas preferencias, así que los niveles de utilidad no tienen significado por sí solos, solo el orden que inducen.</p>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Blog – Rafael Neira</title>
+<title>Apuntes de clase – Rafael Neira</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -78,20 +78,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-recientes .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-recientes'] = new List('listing-recientes', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -163,6 +163,14 @@ window.Quarto = {
     <a class="nav-link" href="./econometria.html"> 
 <span class="menu-text">Econometría</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./microeconomia.html"> 
+<span class="menu-text">Microeconomía</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -189,13 +197,14 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Blog</h1>
+    <div class="quarto-title column-page">
+      <h1 class="title">Apuntes de clase</h1>
+            <p class="subtitle lead">Notas de econometría y microeconomía, abiertas para quien las quiera usar</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta column-page">
 
       
     
@@ -206,87 +215,92 @@ window.Quarto = {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(2)</span></div><div class="category" data-category="RWNvbm9tZXRyJUMzJUFEYQ==">Econometría <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U2VyaWVzJTIwZGUlMjB0aW1wbw==">Series de timpo <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
 
 
 
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<p>Aquí publico las notas que tomo en clase, ordenadas por ramo. Cada sección tiene su propio índice con buscador y filtro por tema.</p>
+<section id="secciones" class="level2">
+<h2 class="anchored" data-anchor-id="secciones">Secciones</h2>
+<div class="grid">
+<section id="econometría" class="level3 g-col-12 g-col-md-6 p-3 border rounded">
+<h3 class="anchored" data-anchor-id="econometría"><a href="./econometria.html">Econometría</a></h3>
+<p>Modelo lineal, supuestos e inferencia. Series de tiempo.</p>
+<p><a href="./econometria.html">Ver el índice →</a></p>
+</section>
+<section id="microeconomía" class="level3 g-col-12 g-col-md-6 p-3 border rounded">
+<h3 class="anchored" data-anchor-id="microeconomía"><a href="./microeconomia.html">Microeconomía</a></h3>
+<p>Teoría del consumidor y del productor. Equilibrio.</p>
+<p><a href="./microeconomia.html">Ver el índice →</a></p>
+</section>
+</div>
+</section>
+<section id="últimas-notas" class="level2">
+<h2 class="anchored" data-anchor-id="últimas-notas">Últimas notas</h2>
+<div id="listing-recientes" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="RWNvbm9tZXRyJUMzJUFEYSUyQ1NlcmllcyUyMGRlJTIwdGltcG8=" data-listing-date-sort="1787284800000" data-listing-file-modified-sort="1787354756643" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="6">
-<div class="thumbnail"><a href="./posts/post-with-code/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/post-with-code/image.jpg" class="thumbnail-image">
-
-</a></div>
+<div class="quarto-post image-right" data-index="0" data-categories="TUNPJTJDSW5mZXJlbmNpYQ==" data-listing-date-sort="1787284800000" data-listing-file-modified-sort="1787355033158" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="117">
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/post-with-code/index.html" class="no-external">Econometría II</a>
+<a href="./econometria/01-mco/index.html" class="no-external">Mínimos cuadrados ordinarios</a>
 </h3>
 <div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('RWNvbm9tZXRyJUMzJUFEYQ=='); return false;">Econometría</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TUNP'); return false;">MCO</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('U2VyaWVzJTIwZGUlMjB0aW1wbw=='); return false;">Series de timpo</div>
+<div class="listing-category" onclick="window.quartoListingCategory('SW5mZXJlbmNpYQ=='); return false;">Inferencia</div>
 
 </div>
-<div class="delink listing-description"><a href="./posts/post-with-code/index.html" class="no-external">
-Aquí alojaré algunos apuntes de econometría
+<div class="delink listing-description"><a href="./econometria/01-mco/index.html" class="no-external">
+<p>Supuestos de Gauss-Markov y propiedades del estimador</p>
 </a></div>
 </div>
 <div class="metadata">
-<a href="./posts/post-with-code/index.html" class="no-external">
+<a href="./econometria/01-mco/index.html" class="no-external">
 <div class="listing-date">
 21 ago 2026
-</div>
-<div class="listing-author">
-Rafael Neira
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="bmV3cw==" data-listing-date-sort="1787025600000" data-listing-file-modified-sort="1787348914191" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
-<div class="thumbnail"><a href="./posts/welcome/index.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="posts/welcome/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
+<div class="quarto-post image-right" data-index="1" data-categories="Q29uc3VtaWRvciUyQ1ByZWZlcmVuY2lhcw==" data-listing-date-sort="1787284800000" data-listing-file-modified-sort="1787355205757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="145">
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/welcome/index.html" class="no-external">Welcome To My Blog</a>
+<a href="./microeconomia/01-preferencias/index.html" class="no-external">Preferencias y función de utilidad</a>
 </h3>
 <div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">news</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Q29uc3VtaWRvcg=='); return false;">Consumidor</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHJlZmVyZW5jaWFz'); return false;">Preferencias</div>
 
 </div>
-<div class="delink listing-description"><a href="./posts/welcome/index.html" class="no-external">
-This is the first post in a Quarto blog. Welcome!
+<div class="delink listing-description"><a href="./microeconomia/01-preferencias/index.html" class="no-external">
+<p>De la relación de preferencia a la representación numérica</p>
 </a></div>
 </div>
 <div class="metadata">
-<a href="./posts/welcome/index.html" class="no-external">
+<a href="./microeconomia/01-preferencias/index.html" class="no-external">
 <div class="listing-date">
-18 ago 2026
-</div>
-<div class="listing-author">
-Tristan O’Malley
+21 ago 2026
 </div>
 </a>
 </div>
 </div>
 </div>
 <div class="listing-no-matching d-none">No hay resultados</div>
-</div></main> <!-- /main -->
+</div>
+<p>¿Buscas algo puntual? Usa el buscador de la barra superior: indexa el texto completo de todas las notas.</p>
+
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

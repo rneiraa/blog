@@ -1,15 +1,49 @@
 ---
-title: "Blog"
+title: "Apuntes de clase"
+subtitle: "Notas de econometría y microeconomía, abiertas para quien las quiera usar"
 listing:
-  contents: posts
-  feed: true
-  sort: "date desc"
+  id: recientes
+  contents:
+    - econometria/**/*.qmd
+    - microeconomia/**/*.qmd
   type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
+  fields: [date, title, description, categories]
+  sort: "date desc"
+  max-items: 6
+  feed: true
 page-layout: full
 title-block-banner: true
 ---
 
+Aquí publico las notas que tomo en clase, ordenadas por ramo. Cada sección tiene
+su propio índice con buscador y filtro por tema.
 
+## Secciones
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6 .p-3 .border .rounded}
+### [Econometría](econometria.qmd)
+
+Modelo lineal, supuestos e inferencia. Series de tiempo.
+
+[Ver el índice →](econometria.qmd)
+:::
+
+::: {.g-col-12 .g-col-md-6 .p-3 .border .rounded}
+### [Microeconomía](microeconomia.qmd)
+
+Teoría del consumidor y del productor. Equilibrio.
+
+[Ver el índice →](microeconomia.qmd)
+:::
+
+:::
+
+## Últimas notas
+
+::: {#recientes}
+:::
+
+¿Buscas algo puntual? Usa el buscador de la barra superior: indexa el texto
+completo de todas las notas.
