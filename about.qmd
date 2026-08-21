@@ -1,8 +1,8 @@
 ---
-title: "About"
+title: "Sobre"
 image: profile.jpg
 about:
-  template: jolla
+  template: trestles
   links:
     - icon: bluesky
       text: Bluesky
@@ -16,4 +16,4 @@ about:
 
 ---
 
-About this blog
+Hola :3
