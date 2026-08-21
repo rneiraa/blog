@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-698cb7a524934bc605af49f812df51e9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-91496555b315f3fe537f6eabf45b38c3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-1dae84c5b7489e666ddd55f31866c7df.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -85,9 +85,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -138,7 +138,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 <link rel="alternate" type="application/rss+xml" title="Rafael Neira" href="index.xml" data-external="1"></head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -197,14 +197,14 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+    <div class="quarto-title column-body">
       <h1 class="title">Apuntes de clase</h1>
             <p class="subtitle lead">Notas de econometría y microeconomía, abiertas para quien las quiera usar</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta">
 
       
     
@@ -212,12 +212,12 @@ window.Quarto = {
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
@@ -241,57 +241,77 @@ window.Quarto = {
 </section>
 <section id="últimas-notas" class="level2">
 <h2 class="anchored" data-anchor-id="últimas-notas">Últimas notas</h2>
-<div id="listing-recientes" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="TUNPJTJDSW5mZXJlbmNpYQ==" data-listing-date-sort="1787284800000" data-listing-file-modified-sort="1787355033158" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="117">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./econometria/01-mco/index.html" class="no-external">Mínimos cuadrados ordinarios</a>
-</h3>
-<div class="listing-categories">
+<div id="listing-recientes" class="quarto-listing quarto-listing-container-table">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+    <select id="listing-recientes-sort" class="form-select" aria-label="Ordenar por" onchange="window['quarto-listings']['listing-recientes'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+      <option value="" disabled="" selected="" hidden="">Ordenar por</option>
+      <option value="index" data-direction="asc">Por defecto</option>
+      <option value="listing-date-sort" data-direction="asc">
+        Fecha - Más antiguo
+      </option>
+      <option value="listing-date-sort" data-direction="desc">
+        Fecha - Más reciente
+      </option>
+      <option value="listing-title-sort" data-direction="asc">
+        Nota
+      </option>
+    </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filtro">
+    </div>
+</div>
+<table class="quarto-listing-table table">
+<thead>
+<tr>
 
-<div class="listing-category" onclick="window.quartoListingCategory('TUNP'); return false;">MCO</div>
+<th>
+<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Fecha</a>
+</th>
 
-<div class="listing-category" onclick="window.quartoListingCategory('SW5mZXJlbmNpYQ=='); return false;">Inferencia</div>
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Nota</a>
+</th>
 
-</div>
-<div class="delink listing-description"><a href="./econometria/01-mco/index.html" class="no-external">
-<p>Supuestos de Gauss-Markov y propiedades del estimador</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./econometria/01-mco/index.html" class="no-external">
-<div class="listing-date">
-21 ago 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Q29uc3VtaWRvciUyQ1ByZWZlcmVuY2lhcw==" data-listing-date-sort="1787284800000" data-listing-file-modified-sort="1787355205757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="145">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./microeconomia/01-preferencias/index.html" class="no-external">Preferencias y función de utilidad</a>
-</h3>
-<div class="listing-categories">
+<th>
+Temas
+</th>
 
-<div class="listing-category" onclick="window.quartoListingCategory('Q29uc3VtaWRvcg=='); return false;">Consumidor</div>
+</tr>
+</thead>
+<tbody class="list">
 
-<div class="listing-category" onclick="window.quartoListingCategory('UHJlZmVyZW5jaWFz'); return false;">Preferencias</div>
+<tr data-index="0" data-categories="TUNPJTJDSW5mZXJlbmNpYQ==" data-listing-date-sort="1787284800000" data-listing-file-modified-sort="1787355033158" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="117" data-listing-title-sort="Mínimos cuadrados ordinarios" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-date">21 ago 2026</span>
+</td>
+<td>
+<a href="./econometria/01-mco/index.html" class="title listing-title">Mínimos cuadrados ordinarios</a>
+</td>
+<td>
+<span class="listing-categories">MCO, Inferencia</span>
+</td>
 
-</div>
-<div class="delink listing-description"><a href="./microeconomia/01-preferencias/index.html" class="no-external">
-<p>De la relación de preferencia a la representación numérica</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./microeconomia/01-preferencias/index.html" class="no-external">
-<div class="listing-date">
-21 ago 2026
-</div>
-</a>
-</div>
-</div>
-</div>
+</tr>
+
+<tr data-index="1" data-categories="Q29uc3VtaWRvciUyQ1ByZWZlcmVuY2lhcw==" data-listing-date-sort="1787284800000" data-listing-file-modified-sort="1787355205757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="145" data-listing-title-sort="Preferencias y función de utilidad" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-date">21 ago 2026</span>
+</td>
+<td>
+<a href="./microeconomia/01-preferencias/index.html" class="title listing-title">Preferencias y función de utilidad</a>
+</td>
+<td>
+<span class="listing-categories">Consumidor, Preferencias</span>
+</td>
+
+</tr>
+
+</tbody>
+</table>
 <div class="listing-no-matching d-none">No hay resultados</div>
 </div>
 <p>¿Buscas algo puntual? Usa el buscador de la barra superior: indexa el texto completo de todas las notas.</p>

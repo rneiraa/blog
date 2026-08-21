@@ -38,3 +38,8 @@ format:
     highlight-style: shades-of-purple.theme
     code-overflow: wrap
     code-copy: true
+    # Ancho de la grilla: afecta banner, cuerpo y márgenes a la vez,
+    # así todo queda alineado (por defecto el cuerpo son 800px)
+    grid:
+      body-width: 900px
+      margin-width: 250px

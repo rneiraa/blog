@@ -1,8 +1,8 @@
 {
   "text-color": "#e3dfff",
-  "background-color": "#1e1e3f",
+  "background-color": "#131327",
   "line-number-color": "#a599e9",
-  "line-number-background-color": "#1e1e3f",
+  "line-number-background-color": "#131327",
   "text-styles": {
     "Normal": {
       "text-color": null,

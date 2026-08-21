@@ -5,19 +5,17 @@ listing:
   id: notas
   contents: microeconomia/**/*.qmd
   type: table
-  fields: [date, title, categories, reading-time]
+  fields: [date, title, categories]
   field-display-names:
     date: "Fecha"
     title: "Nota"
     categories: "Temas"
-    reading-time: "Lectura"
   sort: "date desc"
   sort-ui: [date, title]
   filter-ui: true
   categories: true
   page-size: 25
   feed: true
-page-layout: full
 ---
 
 Apuntes del curso. Usa el buscador o filtra por tema.

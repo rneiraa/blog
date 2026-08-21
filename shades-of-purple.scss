@@ -7,20 +7,21 @@
 // compilar Bootstrap, así que cambiar una aquí reconfigura el sitio
 // entero de forma coherente (botones, tablas, formularios, todo).
 
-// --- Paleta original ---------------------------------------------------
-$sop-bg-deep:   #1e1e3f;   // barra lateral / navbar / bloques de código
-$sop-bg:        #2d2b55;   // fondo del editor -> fondo del sitio
-$sop-bg-soft:   #34317c;   // hover, filas alternas
-$sop-border:    #4d4a8f;   // bordes
+// --- Paleta: variante "Super Dark" -----------------------------------
+// Valores muestreados directamente de la captura del editor.
+$sop-bg:        #191830;   // fondo del editor  -> fondo del sitio
+$sop-surface:   #131327;   // paneles/pestañas  -> navbar, código, tarjetas
+$sop-elevated:  #201f3d;   // hover, filas activas
+$sop-border:    #2b2a4f;   // bordes: apenas visibles
 $sop-fg:        #e3dfff;   // texto
-$sop-muted:     #a599e9;   // texto secundario, números de línea
-$sop-yellow:    #fad000;   // acento principal (cursor, funciones)
+$sop-muted:     #a599e9;   // texto secundario
+$sop-yellow:    #fad000;   // acento principal
 $sop-yellow-lt: #ffee80;
-$sop-pink:      #ff628c;   // constantes
-$sop-green:     #a5ff90;   // strings
-$sop-cyan:      #9effff;   // variables
-$sop-orange:    #ff9d00;   // keywords
-$sop-purple:    #b362ff;   // comentarios
+$sop-pink:      #ff628c;
+$sop-green:     #a5ff90;
+$sop-cyan:      #9effff;
+$sop-orange:    #ff9d00;
+$sop-purple:    #b362ff;
 
 // --- Tipografía --------------------------------------------------------
 // $web-font-path lo importa Bootswatch: al redefinirlo reemplazamos
@@ -40,8 +41,8 @@ $success:   $sop-green;
 $info:      $sop-cyan;
 $warning:   $sop-orange;
 $danger:    $sop-pink;
-$light:     $sop-bg-soft;
-$dark:      $sop-bg-deep;
+$light:     $sop-elevated;
+$dark:      $sop-surface;
 
 $link-color:       $sop-cyan;
 $link-hover-color: $sop-yellow;
@@ -52,34 +53,34 @@ $border-color: $sop-border;
 
 // --- Variables propias de Quarto --------------------------------------
 // (no son de Bootstrap: las define Quarto para sus componentes)
-$navbar-bg: $sop-bg-deep;
+$navbar-bg: $sop-surface;
 $navbar-fg: $sop-fg;
 $navbar-hl: $sop-yellow;
 
-$sidebar-bg: $sop-bg-deep;
+$sidebar-bg: $sop-surface;
 $sidebar-fg: $sop-fg;
 $sidebar-hl: $sop-yellow;
 
-$footer-bg: $sop-bg-deep;
+$footer-bg: $sop-surface;
 $footer-fg: $sop-muted;
 
 $code-color:     $sop-pink;          // código en línea
 $code-bg:        rgba(0, 0, 0, 0.25);
-$code-block-bg:  $sop-bg-deep;       // bloques de código
+$code-block-bg:  $sop-surface;       // bloques de código
 $code-block-border-left: $sop-purple;
 
 $table-border-color: $sop-border;
-$table-hover-bg:     $sop-bg-soft;
+$table-hover-bg:     $sop-elevated;
 
-$input-bg:     $sop-bg-deep;
+$input-bg:     $sop-surface;
 $input-color:  $sop-fg;
 $input-border-color: $sop-border;
 
-$card-bg:     $sop-bg-deep;
-$popover-bg:  $sop-bg-deep;
-$dropdown-bg: $sop-bg-deep;
+$card-bg:     $sop-surface;
+$popover-bg:  $sop-surface;
+$dropdown-bg: $sop-surface;
 $dropdown-link-color: $sop-fg;
-$dropdown-link-hover-bg: $sop-bg-soft;
+$dropdown-link-hover-bg: $sop-elevated;
 
 $toc-color:        $sop-muted;
 $toc-active-border: $sop-yellow;
@@ -91,16 +92,27 @@ $toc-active-border: $sop-yellow;
 // no alcanzan a cubrir.
 
 // --- Encabezados -------------------------------------------------------
-h1, .h1, h2, .h2 { color: $sop-yellow-lt; }
-h3, .h3, h4, .h4, h5, h6 { color: $sop-fg; }
+// El amarillo se reserva para h1/h2. Quarto le pone a los h2 una línea
+// horizontal de borde a borde que ensucia la página: se quita.
+h1, .h1 { color: $sop-yellow; font-weight: 600; letter-spacing: -0.01em; }
+h2, .h2 {
+  color: $sop-yellow;
+  font-weight: 600;
+  font-size: 1.45rem;
+  border-bottom: none;
+  margin-top: 2.5rem;
+  padding-bottom: 0;
+}
+h3, .h3 { color: $sop-fg; font-weight: 600; font-size: 1.15rem; margin-top: 1.75rem; }
+h4, .h4, h5, h6 { color: $sop-fg; font-weight: 600; }
 
 // La numeración de secciones (number-sections) en el acento
 .header-section-number { color: $sop-purple; }
 
 // --- Banner de título --------------------------------------------------
 .quarto-title-banner {
-  background: linear-gradient(135deg, $sop-bg-deep 0%, $sop-bg-soft 100%);
-  border-bottom: 2px solid $sop-yellow;
+  background: $sop-surface;
+  border-bottom: 1px solid $sop-border;
   color: $sop-fg;
   .quarto-title .title { color: $sop-yellow-lt; }
   .subtitle, .quarto-title-meta-contents, .quarto-title-meta-heading { color: $sop-muted; }
@@ -124,7 +136,7 @@ h3, .h3, h4, .h4, h5, h6 { color: $sop-fg; }
     letter-spacing: 0.05em;
     a.sort { color: $sop-muted; &:hover { color: $sop-yellow; } }
   }
-  tbody tr:hover { background-color: $sop-bg-soft; }
+  tbody tr:hover { background-color: $sop-elevated; }
   td { border-color: rgba(255, 255, 255, 0.07); }
   .listing-date, .listing-reading-time { color: $sop-muted; }
   .listing-categories { color: $sop-cyan; }
@@ -132,26 +144,39 @@ h3, .h3, h4, .h4, h5, h6 { color: $sop-fg; }
 
 // --- Fichas de los listados (portada) ---------------------------------
 .quarto-post {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-  .listing-title a { color: $sop-fg; &:hover { color: $sop-yellow; } }
-  .listing-description { color: $sop-muted; }
-  .metadata { color: $sop-muted; }
+  border-bottom: 1px solid $sop-border;
+  padding-bottom: 1.1rem;
+  margin-bottom: 1.1rem;
+  .listing-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.35rem;
+    a { color: $sop-fg; font-weight: 600; &:hover { color: $sop-yellow; } }
+  }
+  .listing-description { color: $sop-muted; font-size: 0.92rem; }
+  .metadata { color: $sop-muted; font-size: 0.85rem; }
+  .listing-date { color: $sop-muted; font-size: 0.85rem; font-variant-numeric: tabular-nums; }
 }
 
 // --- Píldoras de categoría --------------------------------------------
 .listing-category, .quarto-category {
+  background-color: transparent !important;
   border: 1px solid $sop-border !important;
   color: $sop-muted !important;
   border-radius: 999px;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  padding: 0.1rem 0.6rem;
+  opacity: 1;
   &:hover { border-color: $sop-yellow !important; color: $sop-yellow !important; }
 }
 
 // --- Tarjetas de la portada (.border de Bootstrap) --------------------
 .grid > [class*="g-col"].border {
-  background-color: $sop-bg-deep;
+  background-color: $sop-surface;
   border-color: $sop-border !important;
-  transition: border-color 0.15s ease;
-  &:hover { border-color: $sop-yellow !important; }
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  h3 { margin-top: 0; }
+  &:hover { border-color: $sop-yellow !important; background-color: $sop-elevated; }
 }
 
 // --- Citas y separadores ----------------------------------------------
@@ -172,12 +197,12 @@ hr { border-color: $sop-border; opacity: 1; }
 // --- Buscador ----------------------------------------------------------
 // El autocompletado de Quarto trae fondo claro por defecto.
 .aa-Panel, .aa-Autocomplete, .aa-DetachedContainer {
-  background-color: $sop-bg-deep;
+  background-color: $sop-surface;
   color: $sop-fg;
-  .aa-Item { color: $sop-fg; &[aria-selected="true"] { background-color: $sop-bg-soft; } }
+  .aa-Item { color: $sop-fg; &[aria-selected="true"] { background-color: $sop-elevated; } }
   .aa-ItemContentTitle mark, mark { background: transparent; color: $sop-yellow; }
 }
-.aa-Form, .aa-InputWrapper input { background-color: $sop-bg-deep; color: $sop-fg; }
+.aa-Form, .aa-InputWrapper input { background-color: $sop-surface; color: $sop-fg; }
 
 // --- Matemáticas -------------------------------------------------------
 // MathJax hereda el color del texto, pero las ecuaciones numeradas no.
@@ -190,3 +215,30 @@ div.sourceCode {
   border-radius: 4px;
 }
 .code-copy-button { color: $sop-muted; &:hover { color: $sop-yellow; } }
+
+// --- Controles de los listados (ordenar / filtrar) ---------------------
+.quarto-listing {
+  .form-select, .form-control, .input-group-text, .btn {
+    background-color: $sop-surface;
+    border-color: $sop-border;
+    color: $sop-fg;
+    box-shadow: none;
+    &:focus { border-color: $sop-purple; box-shadow: 0 0 0 2px rgba(179, 98, 255, 0.25); }
+  }
+  .form-control::placeholder { color: $sop-muted; opacity: 0.7; }
+  .input-group-text i { color: $sop-muted; }
+  margin-bottom: 2rem;
+}
+.listing-actions-group { margin-bottom: 1rem; }
+
+// --- Barra de categorías de los listados ------------------------------
+.quarto-listing-category {
+  .category {
+    color: $sop-muted;
+    cursor: pointer;
+    padding: 0.15rem 0;
+    &:hover { color: $sop-yellow; }
+    &.active { color: $sop-yellow; font-weight: 600; }
+  }
+  .quarto-listing-category-title { color: $sop-fg; font-weight: 600; }
+}
