@@ -1,0 +1,35 @@
+---
+title: "Mínimos cuadrados ordinarios"
+description: "Supuestos de Gauss-Markov y propiedades del estimador"
+author: "Rafael Neira"
+date: "2026-08-21"
+categories: [MCO, Inferencia]
+---
+
+## El estimador
+
+Partimos del modelo lineal $y = X\beta + u$, con $X$ de dimensión $n \times k$.
+Minimizando la suma de residuos al cuadrado se llega a
+
+$$\hat{\beta} = (X'X)^{-1}X'y$$ {#eq-mco}
+
+La @eq-mco existe siempre que $X'X$ sea invertible, es decir, mientras no haya
+colinealidad perfecta entre regresores.
+
+## Supuestos de Gauss-Markov
+
+1. Linealidad en los parámetros.
+2. Muestreo aleatorio.
+3. No colinealidad perfecta: $\text{rank}(X) = k$.
+4. Exogeneidad estricta: $E[u \mid X] = 0$.
+5. Homocedasticidad: $\text{Var}(u \mid X) = \sigma^2 I_n$.
+
+Bajo (1)–(4) el estimador es insesgado, $E[\hat\beta \mid X] = \beta$. Agregando
+(5) es además el de mínima varianza dentro de los lineales insesgados.
+
+## Varianza
+
+$$\text{Var}(\hat\beta \mid X) = \sigma^2 (X'X)^{-1}$$
+
+Cuando cae el supuesto de homocedasticidad hay que usar errores robustos, que es
+el tema de la nota siguiente.

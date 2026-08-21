@@ -1,10 +1,17 @@
 [
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "econometria.html",
+    "href": "econometria.html",
+    "title": "Econometría",
     "section": "",
-    "text": "This is a post with executable code."
+    "text": "Apuntes del curso. Usa el buscador o filtra por tema.\n\n\n\n\n\n\n   \n    \n    \n      Ordenar por\n      Por defecto\n      \n        Fecha - Más antiguo\n      \n      \n        Fecha - Más reciente\n      \n      \n        Nota\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nFecha\n\n\n\nNota\n\n\n\nTemas\n\n\n\nLectura\n\n\n\n\n\n\n\n\n21 ago 2026\n\n\nMínimos cuadrados ordinarios\n\n\nMCO, Inferencia\n\n\n1 minutos\n\n\n\n\n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   },
   {
     "objectID": "about.html",
@@ -16,15 +23,43 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "website",
+    "title": "Blog",
     "section": "",
-    "text": "Post With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nAug 21, 2026\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nAug 18, 2026\n\n\nTristan O’Malley\n\n\n\n\n\nNo matching items"
+    "text": "Econometría II\n\n\n\nEconometría\n\nSeries de timpo\n\n\n\n\n\n\n\n\n\n21 ago 2026\n\n\nRafael Neira\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n18 ago 2026\n\n\nTristan O’Malley\n\n\n\n\n\nNo hay resultados"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "econometria/01-mco/index.html",
+    "href": "econometria/01-mco/index.html",
+    "title": "Mínimos cuadrados ordinarios",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "Partimos del modelo lineal \\(y = X\\beta + u\\), con \\(X\\) de dimensión \\(n \\times k\\). Minimizando la suma de residuos al cuadrado se llega a\n\\[\\hat{\\beta} = (X'X)^{-1}X'y \\tag{1}\\]\nLa Ecuación 1 existe siempre que \\(X'X\\) sea invertible, es decir, mientras no haya colinealidad perfecta entre regresores."
+  },
+  {
+    "objectID": "econometria/01-mco/index.html#el-estimador",
+    "href": "econometria/01-mco/index.html#el-estimador",
+    "title": "Mínimos cuadrados ordinarios",
+    "section": "",
+    "text": "Partimos del modelo lineal \\(y = X\\beta + u\\), con \\(X\\) de dimensión \\(n \\times k\\). Minimizando la suma de residuos al cuadrado se llega a\n\\[\\hat{\\beta} = (X'X)^{-1}X'y \\tag{1}\\]\nLa Ecuación 1 existe siempre que \\(X'X\\) sea invertible, es decir, mientras no haya colinealidad perfecta entre regresores."
+  },
+  {
+    "objectID": "econometria/01-mco/index.html#supuestos-de-gauss-markov",
+    "href": "econometria/01-mco/index.html#supuestos-de-gauss-markov",
+    "title": "Mínimos cuadrados ordinarios",
+    "section": "2 Supuestos de Gauss-Markov",
+    "text": "2 Supuestos de Gauss-Markov\n\nLinealidad en los parámetros.\nMuestreo aleatorio.\nNo colinealidad perfecta: \\(\\text{rank}(X) = k\\).\nExogeneidad estricta: \\(E[u \\mid X] = 0\\).\nHomocedasticidad: \\(\\text{Var}(u \\mid X) = \\sigma^2 I_n\\).\n\nBajo (1)–(4) el estimador es insesgado, \\(E[\\hat\\beta \\mid X] = \\beta\\). Agregando (5) es además el de mínima varianza dentro de los lineales insesgados."
+  },
+  {
+    "objectID": "econometria/01-mco/index.html#varianza",
+    "href": "econometria/01-mco/index.html#varianza",
+    "title": "Mínimos cuadrados ordinarios",
+    "section": "3 Varianza",
+    "text": "3 Varianza\n\\[\\text{Var}(\\hat\\beta \\mid X) = \\sigma^2 (X'X)^{-1}\\]\nCuando cae el supuesto de homocedasticidad hay que usar errores robustos, que es el tema de la nota siguiente."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Econometría II",
+    "section": "",
+    "text": "Aquí alojaré algunos apuntes de econometría"
   }
 ]

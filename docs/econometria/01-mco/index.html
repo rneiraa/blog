@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Rafael Neira">
+<meta name="description" content="Supuestos de Gauss-Markov y propiedades del estimador">
 
-<title>Econometría II – Rafael Neira</title>
+<title>Mínimos cuadrados ordinarios – Rafael Neira</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -75,11 +76,40 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -131,10 +161,15 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Econometría II</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">Econometría</div>
-                <div class="quarto-category">Series de timpo</div>
+      <h1 class="title">Mínimos cuadrados ordinarios</h1>
+                  <div>
+        <div class="description">
+          Supuestos de Gauss-Markov y propiedades del estimador
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">MCO</div>
+                <div class="quarto-category">Inferencia</div>
               </div>
                   </div>
   </div>
@@ -163,7 +198,17 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contenido</h2>
+   
+  <ul>
+  <li><a href="#el-estimador" id="toc-el-estimador" class="nav-link active" data-scroll-target="#el-estimador"><span class="header-section-number">1</span> El estimador</a></li>
+  <li><a href="#supuestos-de-gauss-markov" id="toc-supuestos-de-gauss-markov" class="nav-link" data-scroll-target="#supuestos-de-gauss-markov"><span class="header-section-number">2</span> Supuestos de Gauss-Markov</a></li>
+  <li><a href="#varianza" id="toc-varianza" class="nav-link" data-scroll-target="#varianza"><span class="header-section-number">3</span> Varianza</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -171,9 +216,30 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>Aquí alojaré algunos apuntes de econometría</p>
+<section id="el-estimador" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="el-estimador"><span class="header-section-number">1</span> El estimador</h2>
+<p>Partimos del modelo lineal <span class="math inline">\(y = X\beta + u\)</span>, con <span class="math inline">\(X\)</span> de dimensión <span class="math inline">\(n \times k\)</span>. Minimizando la suma de residuos al cuadrado se llega a</p>
+<p><span id="eq-mco"><span class="math display">\[\hat{\beta} = (X'X)^{-1}X'y \tag{1}\]</span></span></p>
+<p>La <a href="#eq-mco" class="quarto-xref">Ecuación&nbsp;1</a> existe siempre que <span class="math inline">\(X'X\)</span> sea invertible, es decir, mientras no haya colinealidad perfecta entre regresores.</p>
+</section>
+<section id="supuestos-de-gauss-markov" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="supuestos-de-gauss-markov"><span class="header-section-number">2</span> Supuestos de Gauss-Markov</h2>
+<ol type="1">
+<li>Linealidad en los parámetros.</li>
+<li>Muestreo aleatorio.</li>
+<li>No colinealidad perfecta: <span class="math inline">\(\text{rank}(X) = k\)</span>.</li>
+<li>Exogeneidad estricta: <span class="math inline">\(E[u \mid X] = 0\)</span>.</li>
+<li>Homocedasticidad: <span class="math inline">\(\text{Var}(u \mid X) = \sigma^2 I_n\)</span>.</li>
+</ol>
+<p>Bajo (1)–(4) el estimador es insesgado, <span class="math inline">\(E[\hat\beta \mid X] = \beta\)</span>. Agregando (5) es además el de mínima varianza dentro de los lineales insesgados.</p>
+</section>
+<section id="varianza" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="varianza"><span class="header-section-number">3</span> Varianza</h2>
+<p><span class="math display">\[\text{Var}(\hat\beta \mid X) = \sigma^2 (X'X)^{-1}\]</span></p>
+<p>Cuando cae el supuesto de homocedasticidad hay que usar errores robustos, que es el tema de la nota siguiente.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
