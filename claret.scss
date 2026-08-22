@@ -1,0 +1,739 @@
+/*-- scss:defaults --*/
+
+// =====================================================================
+// Claret · neutros tintados de ciruela + un acento burdeo
+// =====================================================================
+// Principio: el color NO construye la jerarquía. La jerarquía la hacen
+// el tamaño, el peso y el aire. El burdeo aparece poco y siempre
+// significa lo mismo: "esto es interactivo o esto está activo".
+
+// --- Neutros ---------------------------------------------------------
+// Grises con una pizca de ciruela (no son neutros puros: tienen algo de
+// magenta), para que el fondo tenga temperatura sin verse teñido.
+$bg:         #100c11;   // fondo del sitio
+$surface:    #17131a;   // código, campos, superficies
+$surface-2:  #1e1922;   // tarjetas, hover de filas
+$hover:      #251f2b;   // hover fuerte
+$line:       #2e2734;   // borde visible (hairline)
+$line-soft:  #241e2a;   // borde apenas insinuado
+
+$fg:         #ded8e2;   // prosa. Un punto por debajo del blanco: sobre
+                        // fondo casi negro el texto muy brillante "florece"
+                        // y aparenta más peso del que tiene.
+$fg-strong:  #f1edf4;   // encabezados y títulos de listado
+$fg-2:       #a79ead;   // texto secundario
+$fg-3:       #8b8291;   // metadatos, labels
+
+// --- Acento: burdeo --------------------------------------------------
+// Los tonos oscuros (700-900) son para RELLENOS y reglas.
+// Los claros (300-400) para TEXTO, porque sobre fondo oscuro un burdeo
+// real no alcanza contraste legible.
+$claret-200: #e4b3c0;
+$claret-300: #d78fa1;   // hover de enlaces
+$claret-400: #c26a83;   // enlaces, estado activo  (contraste 5.2:1)
+$claret-500: #9e4560;
+$claret-600: #7d3049;
+$claret-700: #5c2036;   // reglas, bordes activos
+$claret-800: #3d1425;   // rellenos sutiles
+$claret-900: #260d18;
+
+// --- Tipografía -------------------------------------------------------
+// Dos familias con roles separados:
+//   Source Serif 4 -> prosa y títulos (lo "académico", calza con MathJax)
+//   Inter          -> cromo de interfaz: navbar, tablas, toc, botones
+$web-font-path: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..600&display=swap";
+
+$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+$font-family-monospace:  "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+$font-serif: "Source Serif 4", Charter, Georgia, "Times New Roman", serif;
+
+$font-size-base:   1rem;
+$line-height-base: 1.7;
+$headings-font-weight: 600;
+
+// --- Bootstrap --------------------------------------------------------
+$body-bg:    $bg;
+$body-color: $fg;
+
+$primary:   $claret-500;
+$secondary: $fg-3;
+$success:   #6f9d7d;
+$info:      $fg-2;
+$warning:   #b98a4e;
+$danger:    $claret-500;
+$light:     $surface-2;
+$dark:      $surface;
+
+$link-color:            $claret-400;
+$link-hover-color:      $claret-300;
+$link-decoration:       none;
+$link-hover-decoration: none;
+
+$border-color:  $line;
+$border-radius: 4px;
+
+// --- Variables de Quarto ---------------------------------------------
+$navbar-bg: $bg;
+$navbar-fg: $fg-2;
+$navbar-hl: $fg;
+
+$sidebar-bg: $bg;
+$sidebar-fg: $fg-2;
+$sidebar-hl: $claret-400;
+
+$footer-bg: $bg;
+$footer-fg: $fg-3;
+
+$code-color:    $fg;
+$code-bg:       rgba(255, 255, 255, 0.05);
+$code-block-bg: $surface;
+$code-block-border-left: transparent;
+
+$table-border-color: $line-soft;
+$table-hover-bg:     $surface;
+
+$input-bg:           $surface;
+$input-color:        $fg;
+$input-border-color: $line;
+
+$card-bg:     $surface-2;
+$popover-bg:  $surface-2;
+$dropdown-bg: $surface-2;
+$dropdown-link-color:     $fg-2;
+$dropdown-link-hover-bg:  $hover;
+
+$toc-color:         $fg-3;
+$toc-active-border: $claret-400;
+
+
+/*-- scss:rules --*/
+
+// =====================================================================
+// 1. Base tipográfica
+// =====================================================================
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+// La prosa va en serif; el cromo (navbar, toc, tablas, botones) en Inter.
+main.content,
+.quarto-title-block .title,
+.quarto-title-block .subtitle,
+.about-entity + div,
+.quarto-about-trestles .about-entity + div {
+  font-family: $font-serif;
+  font-size: 1.05rem;
+  line-height: 1.72;
+}
+
+main.content p, main.content li { font-weight: 400; }
+main.content p { margin-bottom: 1.15rem; }
+main.content li { margin-bottom: 0.3rem; }
+
+// Los números en tablas y fechas, con ancho fijo.
+.listing-date, .listing-reading-time, table td, time {
+  font-variant-numeric: tabular-nums;
+}
+
+// =====================================================================
+// 2. Encabezados — jerarquía por tamaño y aire, sin color
+// =====================================================================
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $font-serif;
+  color: $fg-strong;
+  letter-spacing: -0.011em;
+  text-wrap: balance;
+}
+
+h1, .h1 { font-size: 2.05rem; line-height: 1.2; }
+
+h2, .h2 {
+  font-size: 1.45rem;
+  line-height: 1.3;
+  margin-top: 3rem;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0;
+  border-bottom: none;   // Quarto le pone una línea de borde a borde
+}
+
+h3, .h3 { font-size: 1.15rem; margin-top: 2rem; margin-bottom: 0.6rem; }
+h4, .h4 { font-size: 1.02rem; margin-top: 1.6rem; color: $fg-2; }
+
+// Numeración de secciones: es un dato, no un título.
+.header-section-number {
+  color: $fg-3;
+  font-weight: 400;
+  margin-right: 0.4em;
+}
+
+// =====================================================================
+// 3. Bloque de título de página
+// =====================================================================
+// Sin banner de color: un título grande, un subtítulo tenue y una regla
+// fina. Es lo que hace la mayor parte del trabajo "editorial".
+#title-block-header.quarto-title-block.default {
+  margin-bottom: 2.4rem;
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid $line-soft;
+
+  // En las notas Quarto emite: título > categorías > descripción > meta.
+  // La descripción vive fuera de .quarto-title, así que no se puede
+  // reordenar; se le da aire y el mismo tratamiento que al subtítulo.
+  .quarto-categories { margin-top: 0.85rem; gap: 0.4rem; }
+
+  .description, .description p {
+    font-family: $font-serif;
+    font-size: 1.08rem;
+    font-weight: 400;
+    line-height: 1.55;
+    color: $fg-2;
+    margin-top: 0.85rem;
+    margin-bottom: 0;
+  }
+}
+
+.quarto-title-block {
+
+  .title {
+    color: $fg-strong;
+    font-size: 2.2rem;
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.08rem;
+    color: $fg-2;
+    font-weight: 400;
+    line-height: 1.55;
+    margin-bottom: 0;
+  }
+
+  .quarto-title-meta {
+    margin-top: 1rem;
+    font-family: $font-family-sans-serif;
+  }
+
+  .quarto-title-meta-heading {
+    color: $fg-3;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    font-weight: 500;
+  }
+
+  .quarto-title-meta-contents,
+  .quarto-title-meta-contents p { color: $fg-2; font-size: 0.88rem; }
+}
+
+// Si alguna página sí pide banner, que sea sobrio: un lavado de burdeo
+// muy oscuro que se funde con el fondo.
+.quarto-title-banner {
+  background: linear-gradient(180deg, $claret-900 0%, $bg 100%);
+  border-bottom: 1px solid $line-soft;
+  .quarto-title .title { color: $fg; }
+  .subtitle, .quarto-title-meta-contents, .quarto-title-meta-heading { color: $fg-2; }
+}
+
+// =====================================================================
+// 4. Enlaces — subrayado fino, no color chillón
+// =====================================================================
+main.content a:not(.btn):not(.quarto-title-author-orcid) {
+  color: $claret-400;
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 0.19em;
+  text-decoration-color: rgba(194, 106, 131, 0.4);
+  transition: color 0.12s ease, text-decoration-color 0.12s ease;
+
+  &:hover {
+    color: $claret-300;
+    text-decoration-color: $claret-300;
+  }
+}
+
+// Los títulos con link (h2 de una sección enlazada) no llevan subrayado.
+main.content h1 a, main.content h2 a, main.content h3 a {
+  text-decoration: none !important;
+  color: $fg !important;
+  &:hover { color: $claret-300 !important; }
+}
+
+// Los listados son interfaz, no prosa: se les quita el subrayado y el
+// color de enlace, y cada pieza recibe su tratamiento más abajo.
+main.content .quarto-listing a,
+main.content .quarto-listing-table a,
+main.content .quarto-post a,
+main.content .listing-actions-group a,
+main.content #title-block-header a,
+main.content .quarto-title-block a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+::selection { background: rgba(158, 69, 96, 0.4); color: $fg; }
+
+// =====================================================================
+// 5. Navbar
+// =====================================================================
+.navbar {
+  background-color: rgba(16, 12, 17, 0.85) !important;
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid $line-soft;
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+  font-family: $font-family-sans-serif;
+
+  .navbar-brand {
+    color: $fg;
+    font-family: $font-serif;
+    font-weight: 600;
+    font-size: 1.02rem;
+    letter-spacing: 0.005em;
+  }
+
+  .nav-link {
+    color: $fg-2 !important;
+    font-size: 0.9rem;
+    font-weight: 400;
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
+    transition: color 0.12s ease;
+
+    &:hover { color: $fg !important; }
+
+    // Activo: el texto se aclara y aparece una barra burdeo bajo el ítem.
+    &.active {
+      color: $fg !important;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0.85rem;
+        right: 0.85rem;
+        bottom: -0.55rem;
+        height: 1.5px;
+        background: $claret-400;
+      }
+    }
+  }
+
+  .navbar-toggler { border-color: $line; }
+}
+
+// =====================================================================
+// 6. Listados en tabla
+// =====================================================================
+.quarto-listing-table {
+  font-family: $font-family-sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+
+  thead th, thead th a.sort {
+    color: $fg-3 !important;
+    text-transform: uppercase;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.09em;
+  }
+
+  thead th {
+    border-bottom: 1px solid $line;
+    border-top: none;
+    padding: 0.5rem 0.75rem;
+    a.sort {
+      transition: color 0.12s ease;
+      &:hover { color: $fg !important; }
+    }
+  }
+
+  tbody tr {
+    border-bottom: 1px solid $line-soft;
+    transition: background-color 0.12s ease;
+    &:hover { background-color: $surface; }
+  }
+
+  td {
+    border: none;
+    padding: 0.72rem 0.75rem;
+    vertical-align: baseline;
+  }
+
+  a.listing-title, .listing-title a, .listing-title {
+    font-family: $font-serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: $fg-strong !important;
+    transition: color 0.12s ease;
+  }
+  tbody tr:hover a.listing-title { color: $claret-300 !important; }
+
+  .listing-date { color: $fg-3 !important; font-size: 0.85rem; white-space: nowrap; }
+  .listing-categories, .listing-author, .listing-description {
+    color: $fg-3 !important;
+    font-size: 0.82rem;
+  }
+}
+
+// =====================================================================
+// 7. Listados en ficha (el blog)
+// =====================================================================
+.quarto-post {
+  border-bottom: 1px solid $line-soft;
+  padding-bottom: 1.6rem;
+  margin-bottom: 1.6rem;
+  gap: 1.5rem;
+
+  .listing-title, .listing-title a {
+    font-family: $font-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    margin-bottom: 0.4rem;
+    color: $fg-strong !important;
+    transition: color 0.12s ease;
+  }
+  &:hover .listing-title a { color: $claret-300 !important; }
+
+  .listing-description, .listing-description a, .listing-description p {
+    font-family: $font-serif;
+    color: $fg-2 !important;
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .metadata, .listing-date, .listing-date a, .metadata a {
+    font-family: $font-family-sans-serif;
+    color: $fg-3 !important;
+    font-size: 0.8rem;
+    letter-spacing: 0.01em;
+  }
+
+  .thumbnail-image { border-radius: 4px; border: 1px solid $line-soft; }
+}
+
+// =====================================================================
+// 8. Etiquetas de categoría
+// =====================================================================
+.listing-category, .quarto-category {
+  background-color: transparent !important;
+  border: 1px solid $line !important;
+  color: $fg-3 !important;
+  border-radius: 3px;
+  font-family: $font-family-sans-serif;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.12rem 0.5rem;
+  opacity: 1;
+  transition: border-color 0.12s ease, color 0.12s ease;
+  &:hover { border-color: $claret-600 !important; color: $claret-300 !important; }
+}
+
+// Barra lateral de categorías del listado.
+// Ojo: el h5 del título es HERMANO de .quarto-listing-category, no hijo.
+.quarto-listing-category-title {
+  color: $fg-3 !important;
+  font-family: $font-family-sans-serif !important;
+  font-size: 0.68rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-weight: 500 !important;
+  margin-bottom: 0.7rem;
+}
+
+.quarto-listing-category {
+  font-family: $font-family-sans-serif;
+  .quarto-category-count { color: $fg-3; font-size: 0.78rem; }
+  .category {
+    color: $fg-2;
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 0.18rem 0;
+    transition: color 0.12s ease;
+    &:hover { color: $fg; }
+    &.active { color: $claret-400; font-weight: 500; }
+  }
+}
+
+// =====================================================================
+// 9. Tarjetas de la portada
+// =====================================================================
+.grid > [class*="g-col"].border {
+  background-color: transparent;
+  border: 1px solid $line-soft !important;
+  border-radius: 5px;
+  padding: 1.4rem 1.5rem !important;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+
+  h3 { margin-top: 0; margin-bottom: 0.5rem; font-size: 1.1rem; }
+  p  { color: $fg-2; font-size: 0.95rem; margin-bottom: 0.9rem; }
+
+  a { text-decoration: none !important; }
+
+  &:hover {
+    border-color: $claret-700 !important;
+    background-color: $surface;
+  }
+}
+
+// =====================================================================
+// 10. Código
+// =====================================================================
+div.sourceCode {
+  background-color: $surface;
+  border: 1px solid $line-soft;
+  border-radius: 5px;
+  margin: 1.5rem 0;
+}
+
+pre.sourceCode, pre code { font-size: 0.86rem; line-height: 1.6; }
+
+code:not(.sourceCode) {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid $line-soft;
+  border-radius: 3px;
+  color: $fg;
+  font-size: 0.85em;
+  padding: 0.08em 0.35em;
+}
+
+.code-copy-button {
+  color: $fg-3;
+  &:hover { color: $claret-300; }
+}
+
+// =====================================================================
+// 11. Citas, reglas y notas
+// =====================================================================
+blockquote {
+  border-left: 2px solid $claret-700;
+  background: none;
+  color: $fg-2;
+  font-style: italic;
+  padding: 0.15rem 0 0.15rem 1.3rem;
+  margin: 1.8rem 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid $line-soft;
+  opacity: 1;
+  margin: 2.5rem 0;
+}
+
+// Notas al pie: tipografía menor, separadas por una regla fina.
+#footnotes, .footnotes {
+  border-top: 1px solid $line-soft;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: $fg-2;
+  h2 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.09em;
+       color: $fg-3; font-family: $font-family-sans-serif; margin-top: 0; }
+}
+
+// =====================================================================
+// 12. Índice lateral (TOC)
+// =====================================================================
+#TOC, .sidebar, nav[role="doc-toc"] {
+  font-family: $font-family-sans-serif;
+
+  .sidebar-title, > h2, .h2 {
+    color: $fg-3;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    font-weight: 500;
+    font-family: $font-family-sans-serif;
+  }
+
+  a {
+    color: $fg-3;
+    font-size: 0.83rem;
+    line-height: 1.45;
+    padding: 0.22rem 0.7rem;
+    border-left: 1.5px solid transparent;
+    text-decoration: none;
+    transition: color 0.12s ease, border-color 0.12s ease;
+    &:hover { color: $fg; }
+  }
+
+  a.active, .active > a {
+    color: $claret-400 !important;
+    border-left-color: $claret-400 !important;
+  }
+}
+
+// =====================================================================
+// 13. Formularios y controles del listado
+// =====================================================================
+.quarto-listing {
+  margin-bottom: 2.5rem;
+  font-family: $font-family-sans-serif;
+
+  .form-select, .form-control, .input-group-text, .btn {
+    background-color: $surface;
+    border-color: $line;
+    color: $fg;
+    font-size: 0.85rem;
+    box-shadow: none;
+    border-radius: 4px;
+    &:focus {
+      border-color: $claret-600;
+      box-shadow: 0 0 0 2px rgba(158, 69, 96, 0.25);
+    }
+  }
+  .form-control::placeholder { color: $fg-3; opacity: 1; }
+  .input-group-text i { color: $fg-3; }
+}
+.listing-actions-group { margin-bottom: 1.2rem; gap: 0.5rem; }
+
+// =====================================================================
+// 14. Buscador
+// =====================================================================
+.aa-Panel, .aa-Autocomplete, .aa-DetachedContainer {
+  background-color: $surface-2;
+  color: $fg;
+  border: 1px solid $line;
+  border-radius: 6px;
+  font-family: $font-family-sans-serif;
+  .aa-Item {
+    color: $fg-2;
+    &[aria-selected="true"] { background-color: $hover; color: $fg; }
+  }
+  .aa-ItemContentTitle mark, mark { background: transparent; color: $claret-300; font-weight: 600; }
+  .aa-SourceHeaderTitle { color: $fg-3; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.09em; }
+}
+.aa-Form, .aa-InputWrapper input {
+  background-color: $surface;
+  border-color: $line;
+  color: $fg;
+}
+.aa-DetachedSearchButton { background-color: transparent; border-color: $line; color: $fg-3; }
+
+// =====================================================================
+// 15. Matemáticas
+// =====================================================================
+mjx-container { color: $fg; }
+.math.display { overflow-x: auto; overflow-y: hidden; margin: 1.6rem 0; }
+// El número de ecuación, en gris: es una referencia, no contenido.
+mjx-container[display="true"] mjx-mtd:last-child { color: $fg-3; }
+
+// =====================================================================
+// 16. Callouts
+// =====================================================================
+// Quarto clasifica este sitio como "claro" (por cómo se apila el tema),
+// así que sus callouts vienen con fondo blanco y cabecera azul. Se
+// repintan enteros: fondo de superficie y una barra lateral de color.
+div.callout {
+  background-color: $surface !important;
+  border: 1px solid $line-soft !important;
+  border-left: 2px solid $line !important;
+  border-radius: 4px;
+  margin: 1.8rem 0;
+
+  .callout-header {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border-bottom: 1px solid $line-soft !important;
+    color: $fg-strong !important;
+    font-family: $font-family-sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding: 0.5rem 0.9rem;
+  }
+
+  .callout-body, .callout-body-container {
+    color: $fg-2 !important;
+    font-size: 0.97rem;
+    padding: 0.9rem;
+    p:last-child { margin-bottom: 0; }
+  }
+
+  .callout-icon::before { opacity: 0.65; }
+}
+
+div.callout-note      { border-left-color: $fg-3 !important; }
+div.callout-tip       { border-left-color: #6f9d7d !important; }
+div.callout-warning   { border-left-color: #b98a4e !important; }
+div.callout-important { border-left-color: $claret-500 !important; }
+div.callout-caution   { border-left-color: #b98a4e !important; }
+
+// =====================================================================
+// 17. Tablas de contenido (markdown)
+// =====================================================================
+main.content table:not(.quarto-listing-table) {
+  font-family: $font-family-sans-serif;
+  font-size: 0.9rem;
+  border-collapse: collapse;
+  margin: 1.6rem 0;
+  thead th {
+    border-bottom: 1px solid $line;
+    border-top: none;
+    color: $fg-3;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    padding: 0.5rem 0.7rem;
+  }
+  td { border-color: $line-soft; padding: 0.5rem 0.7rem; }
+}
+
+// =====================================================================
+// 18. Pie de página
+// =====================================================================
+.nav-footer {
+  border-top: 1px solid $line-soft;
+  color: $fg-3;
+  font-family: $font-family-sans-serif;
+  font-size: 0.82rem;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  a { color: $fg-3; text-decoration: none; &:hover { color: $fg; } }
+}
+
+// =====================================================================
+// 19. Página "Sobre"
+// =====================================================================
+.quarto-about-trestles, .quarto-about-jolla, .quarto-about-solana {
+  .about-image { border-radius: 6px; border: 1px solid $line; }
+
+  // Aquí el bloque de título va centrado dentro de la columna: la regla
+  // inferior queda como un guion suelto, así que se quita.
+  #title-block-header.quarto-title-block.default {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-links .about-link {
+    background-color: transparent !important;
+    border: 1px solid $line !important;
+    color: $fg-2 !important;
+    border-radius: 4px;
+    font-family: $font-family-sans-serif;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.8rem;
+    text-decoration: none !important;
+    transition: border-color 0.12s ease, color 0.12s ease;
+    &:hover { border-color: $claret-600 !important; color: $claret-300 !important; }
+  }
+}
+
+// =====================================================================
+// 20. Detalles finales
+// =====================================================================
+:focus-visible { outline: 2px solid $claret-500; outline-offset: 2px; }
+html { scroll-behavior: smooth; }
+
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: $bg; }
+::-webkit-scrollbar-thumb { background: $line; border-radius: 6px; border: 3px solid $bg; }
+::-webkit-scrollbar-thumb:hover { background: $hover; }

@@ -20,7 +20,6 @@
 
 
 
-
 <section id="la-relación-de-preferencia" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="la-relación-de-preferencia"><span class="header-section-number">1</span> La relación de preferencia</h2>
 <p>El consumidor ordena canastas del conjunto de consumo <img src="https://latex.codecogs.com/png.latex?X%20%5Csubseteq%20%5Cmathbb%7BR%7D%5En_+"> mediante una relación <img src="https://latex.codecogs.com/png.latex?%5Csuccsim">, donde <img src="https://latex.codecogs.com/png.latex?x%20%5Csuccsim%20y"> se lee “<img src="https://latex.codecogs.com/png.latex?x"> es al menos tan preferida como <img src="https://latex.codecogs.com/png.latex?y">”.</p>

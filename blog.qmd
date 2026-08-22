@@ -10,5 +10,4 @@ listing:
   sort-ui: false
   filter-ui: false
   feed: true
-title-block-banner: true
 ---

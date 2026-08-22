@@ -30,16 +30,22 @@ lang: es
 
 format:
   html:
-    # darkly = base oscura de Bootstrap; el .scss encima la repinta
+    # darkly = base oscura de Bootstrap; claret.scss encima la repinta.
+    # (Bajo 'dark:' Quarto añadiría un conmutador claro/oscuro y un tema
+    # claro sin estilar, así que va como tema único.)
     theme:
       - darkly
-      - shades-of-purple.scss
+      - claret.scss
     css: styles.css
-    highlight-style: shades-of-purple.theme
+    highlight-style: claret.theme
     code-overflow: wrap
     code-copy: true
     # Ancho de la grilla: afecta banner, cuerpo y márgenes a la vez,
     # así todo queda alineado (por defecto el cuerpo son 800px)
+    # 800px a 1.05rem en serif deja una medida de ~80 caracteres,
+    # que es donde la lectura larga se mantiene cómoda.
     grid:
-      body-width: 900px
-      margin-width: 250px
+      body-width: 800px
+      margin-width: 240px
+      gutter-width: 1.5rem
+    toc-title: "En esta página"

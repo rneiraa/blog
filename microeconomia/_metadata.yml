@@ -3,7 +3,6 @@
 # No re-ejecuta el código si el .qmd no cambió
 freeze: auto
 
-title-block-banner: true
 
 # Tabla de contenidos lateral: clave en apuntes largos
 toc: true

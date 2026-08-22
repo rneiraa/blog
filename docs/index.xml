@@ -20,7 +20,6 @@
 
 
 
-
 <section id="el-estimador" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="el-estimador"><span class="header-section-number">1</span> El estimador</h2>
 <p>Partimos del modelo lineal <img src="https://latex.codecogs.com/png.latex?y%20=%20X%5Cbeta%20+%20u">, con <img src="https://latex.codecogs.com/png.latex?X"> de dimensión <img src="https://latex.codecogs.com/png.latex?n%20%5Ctimes%20k">. Minimizando la suma de residuos al cuadrado se llega a</p>
@@ -57,7 +56,6 @@
   <dc:creator>Rafael Neira</dc:creator>
   <link>https://rneiraa.github.io/blog/microeconomia/01-preferencias/</link>
   <description><![CDATA[ 
-
 
 
 

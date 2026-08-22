@@ -15,11 +15,9 @@ listing:
   sort: "date desc"
   max-items: 8
   feed: true
-title-block-banner: true
 ---
 
-Aquí publico las notas que tomo en clase, ordenadas por ramo. Cada sección tiene
-su propio índice con buscador y filtro por tema.
+Aprendo escribiendo, aquí escribo. 
 
 ## Secciones
 
@@ -48,5 +46,4 @@ Teoría del consumidor y del productor. Equilibrio.
 ::: {#recientes}
 :::
 
-¿Buscas algo puntual? Usa el buscador de la barra superior: indexa el texto
-completo de todas las notas.
+Buscador barra superior
